@@ -1,0 +1,8 @@
+{
+    "maven.view": "flat",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\downloads\\firefoxDownloads\\ojdbc11.jar",
+        "d:\\mysql_connector\\mysql-connector-j-8.3.0\\mysql-connector-j-8.3.0.jar"
+    ]
+}
