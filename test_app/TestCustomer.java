@@ -3,6 +3,7 @@ package test_app;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+// import DB_info.DatabaseInfo;
 import insert_action.InsertData;
 import insert_info.InsertInfo;
 
@@ -32,6 +33,9 @@ public class TestCustomer {
         } else {
             System.out.println("a problem occured");
         }
+        InsertInfo data = new InsertInfo(name, mobile_no, full_address, pin_code);
+        InsertData.insert(data);
+
         scanner.close();
 
     }

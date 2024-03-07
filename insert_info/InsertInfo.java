@@ -49,10 +49,5 @@ public class InsertInfo {
         super();
     }
 
-    // class InsertData {
-
-        
-
-    // }
 
 }
