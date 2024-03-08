@@ -11,9 +11,9 @@ import test_app.auth_cred.AuthCred;
 public class InsertData {
 
 
-    public static int insert(InsertInfo info) throws SQLException {
+    public static boolean insert(InsertInfo info) throws SQLException {
 
-            int flag = 0;
+            boolean flag = false;
 
             final String name = info.getName();
             final String mobile_no = info.getMobile_no();
@@ -29,7 +29,8 @@ public class InsertData {
                 pstmt.setString(2, mobile_no);
                 pstmt.setString(3, full_address);
                 pstmt.setString(4, pin_code);
-                flag = pstmt.executeUpdate();
+                pstmt.executeUpdate();
+                flag = true;
 
             } catch (Exception e) {
 
