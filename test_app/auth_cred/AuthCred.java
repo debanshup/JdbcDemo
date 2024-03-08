@@ -1,9 +1,9 @@
 package test_app.auth_cred;
 
 public class AuthCred {
-    private String url = "jdbc:mysql://localhost:3306/ testjdbc";
-    private String user = "root";
-    private String password = "qwerty";
+    private String url = "jdbc URL";
+    private String user = "USERNAME";
+    private String password = "PASSWORD";
 
     public String getUrl() {
         return url;

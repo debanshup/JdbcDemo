@@ -1,6 +1,6 @@
 package test_app;
 
-import java.sql.SQLException;
+
 import java.util.Scanner;
 
 // import DB_info.DatabaseInfo;
@@ -8,7 +8,7 @@ import insert_action.InsertData;
 import insert_info.InsertInfo;
 
 public class TestCustomer {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args)  {
         String name, mobile_no, village, post_office, landmark, pin_code, full_address;
         Scanner scanner = new Scanner(System.in);
         System.out.println("YOUR NAME :");
@@ -30,11 +30,8 @@ public class TestCustomer {
         ;
         if (InsertData.insert(info)) {
             System.out.println("data inserted successfully :) ");
-        } else {
-            System.out.println("a problem occured");
-        }
-        InsertInfo data = new InsertInfo(name, mobile_no, full_address, pin_code);
-        InsertData.insert(data);
+        } 
+        
 
         scanner.close();
 

@@ -3,14 +3,14 @@ package insert_action;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import insert_info.InsertInfo;
 import test_app.auth_cred.AuthCred;
 
 public class InsertData {
 
-    public static boolean insert(InsertInfo info) throws SQLException {
+
+    public static boolean insert(InsertInfo info) {
 
             boolean flag = false;
 
@@ -21,8 +21,8 @@ public class InsertData {
             final String query = "INSERT INTO Customers (name, mobile_no, full_address, pin_code) VALUES (?, ?, ?, ?)";
             final AuthCred cred = new AuthCred();
 
-            Connection con = DriverManager.getConnection(cred.getUrl(), cred.getUser(), cred.getPassword());
-                    PreparedStatement pstmt = con.prepareStatement(query)
+            try (Connection con = DriverManager.getConnection(cred.getUrl(), cred.getUser(), cred.getPassword());
+                    PreparedStatement pstmt = con.prepareStatement(query)) {
 
                 pstmt.setString(1, name);
                 pstmt.setString(2, mobile_no);
@@ -31,11 +31,11 @@ public class InsertData {
                 pstmt.executeUpdate();
                 flag = true;
 
-            // } catch (Exception e) {
+            } catch (Exception e) {
 
-            //     System.out.println(e.getMessage());
+                System.out.println(e.getMessage());
 
-            // }
+            }
             return flag;
         }
 
