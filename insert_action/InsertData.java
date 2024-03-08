@@ -10,7 +10,6 @@ import test_app.auth_cred.AuthCred;
 
 public class InsertData {
 
-
     public static boolean insert(InsertInfo info) throws SQLException {
 
             boolean flag = false;
@@ -22,8 +21,8 @@ public class InsertData {
             final String query = "INSERT INTO Customers (name, mobile_no, full_address, pin_code) VALUES (?, ?, ?, ?)";
             final AuthCred cred = new AuthCred();
 
-            try (Connection con = DriverManager.getConnection(cred.getUrl(), cred.getUser(), cred.getPassword());
-                    PreparedStatement pstmt = con.prepareStatement(query)) {
+            Connection con = DriverManager.getConnection(cred.getUrl(), cred.getUser(), cred.getPassword());
+                    PreparedStatement pstmt = con.prepareStatement(query)
 
                 pstmt.setString(1, name);
                 pstmt.setString(2, mobile_no);
@@ -32,11 +31,11 @@ public class InsertData {
                 pstmt.executeUpdate();
                 flag = true;
 
-            } catch (Exception e) {
+            // } catch (Exception e) {
 
-                System.out.println(e.getMessage());
+            //     System.out.println(e.getMessage());
 
-            }
+            // }
             return flag;
         }
 
