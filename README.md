@@ -1,5 +1,5 @@
 This repository is about java JDBC concepts
-create a table ' Customer ' running the following SQL command ->
+create a table ' Customer ' by running the following SQL command ->
 
 CREATE TABLE Customers (
     name VARCHAR(255),
