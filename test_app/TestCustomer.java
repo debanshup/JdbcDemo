@@ -28,7 +28,7 @@ public class TestCustomer {
 
         InsertInfo info = new InsertInfo(name, mobile_no, full_address, pin_code);
         ;
-        if (InsertData.insert(info) != 0) {
+        if (InsertData.insert(info)) {
             System.out.println("data inserted successfully :) ");
         } else {
             System.out.println("a problem occured");
